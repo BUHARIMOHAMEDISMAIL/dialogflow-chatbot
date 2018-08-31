@@ -1,0 +1,86 @@
+.chatbot-section {
+    width: 20%;
+    border: 4px solid #03a9f4c9;
+    border-radius: 5px;
+    position: absolute;
+    right: 10px;
+    bottom: 100px;
+    min-height: 42vh;
+    max-height: 42vh;
+}
+.chatbot-content {
+    height: 32vh;
+    overflow-y: scroll;
+}
+.chatbot-section:after {
+    content: '';
+    position: absolute;
+    left: 80%;
+    top: 100.7%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #03a9f4c9;
+    clear: both;
+}
+.chatbot-header {
+    padding: 5px;
+    text-align: center;
+    background: #03a9f461;
+    font-size: 18px;
+    font-weight: bold;
+}
+.chatbot-icon {
+    position: absolute;
+    right: 7px;
+    bottom: 0px;
+}
+.chatbot-icon img {
+    width: 75px;
+    height: 75px;
+}
+.adia-content {
+    width: 80%;
+    display: inline-block;
+}
+.adia-content img {
+    width: 30px;
+    height: 30px;
+}
+.adia-content p {
+    display: inline-block;
+    vertical-align: super;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    width:70%;
+}
+.my-content {
+    width: 80%;
+    float: right;
+}
+.my-content img {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-top: 15px;
+}
+.my-content p {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    float: right;
+    width:70%
+}
+.chatbot-input {
+    padding: 5px;
+    border-top: 1px solid #ccc;
+}
+.chatbot-input input {
+    width: 70%;
+    float: right;
+}
+.chatbot-input button {
+    float: right;
+}

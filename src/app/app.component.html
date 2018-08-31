@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div class="chatbot-icon" (click)="showchatbox()">
+  <img src="./assets/images/adiabot.png">
+</div>
+<div class="chatbot-section" *ngIf="chatboxtoggle">
+  <div class="chatbot-header">
+    Adia demo chatbot
+  </div>
+  <div class="chatbot-content">
+    <div class="chat-inside-content" *ngFor="let msg of chatmessages">
+      <div class="adia-content" *ngIf="msg.who =='adia'">
+          <img src="./assets/images/me.png">
+          <p>{{msg.message}}</p>
+      </div>
+      <div class="my-content" *ngIf="msg.who =='recipient'">
+          <img src="./assets/images/me.png">
+          <p>{{msg.message}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="chatbot-input">
+    <button (click)="submit(chatmsg)">Submit</button>    
+    <input type="text" [(ngModel)]="chatmsg" />
+  </div>
+</div>
