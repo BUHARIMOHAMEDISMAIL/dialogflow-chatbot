@@ -11,8 +11,9 @@ router.get('/', (req, res) => {
 
 router.post('/test', function (req, res) {
     console.log('test is working');
+    let message = req.body.message
         var sessid = "875968459080";
-        var postvalue = "hi";
+        var postvalue = message;
         var request = app.textRequest(postvalue, {
             sessionId: sessid
         });
