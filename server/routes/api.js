@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const apiai = require('apiai');
 
-var app = apiai("d9fc0931b95f45a7ac3ee78c97196618");   
+var app = apiai("747582eae2a04c5fbcf4f3f273ee6cf7");   
 
 /* GET api listing. */
 router.get('/', (req, res) => {
