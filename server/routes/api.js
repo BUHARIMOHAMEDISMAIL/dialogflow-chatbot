@@ -48,7 +48,7 @@ router.post('/webhook', function (req, res) {
 //       pay_rate: req.body.result.contexts[7].parameters.number-integer2.original,
 //       language_needed: req.body.result.contexts[7].parameters.language.original
 //     };
-    let placeOrder = JSON.stringify(req.body.result);
+    let placeOrder = JSON.stringify(req.body.result.contexts[7]);
   
     res.status(200).json({
       source: 'webhook',
