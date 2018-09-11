@@ -19,7 +19,12 @@ router.post('/test', function (req, res) {
         });
         //request for api
         request.on('response', function (response) {
-            res.json(response.result.fulfillment.messages[0].speech);
+//             res.json(response.result.fulfillment.messages[0].speech);
+            if(response.result.fulfillment.messages[0].speech) {
+              res.json(response.result.fulfillment.messages[0].speech);
+            } else {
+              res.json(response.queryResult.fulfillmentMessages[0].text.text[0]);
+            }
         });
 
         request.on('error', function (error) {
