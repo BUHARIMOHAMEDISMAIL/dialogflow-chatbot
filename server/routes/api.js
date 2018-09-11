@@ -33,10 +33,25 @@ router.post('/test', function (req, res) {
 
         request.end();
 });
-
+let orderdata = {
+    assignment_name: 'Testing',
+    location: 'Los vegas',
+    role: 'catering Staff',
+    role_count: 2,
+    date: '10-02-2018',
+    start_time: '04:00 am',
+    end_time: '09:00 pm',
+    experience_needed: 'Rookie',
+    pay_rate: 20,
+    language_needed: 'english'
+    };
 router.post('/webhook', function (req, res) {
-    let result = req;
+    let result = orderdata;
     res.json(result);
+})
+// router.post('/webhook', function (req, res) {
+//     let result = req;
+//     res.json(result);
 //     let const = {
 //         assignment_name: response.queryResult.outputContexts[7].parameters.any.original
 //         location: response.queryResult.outputContexts[7].parameters.location.original
@@ -49,6 +64,6 @@ router.post('/webhook', function (req, res) {
 //         pay_rate: response.queryResult.outputContexts[7].parameters.number-integer2.original
 //         language_needed: response.queryResult.outputContexts[7].parameters.language.original
 //         }
-})
+// })
 
 module.exports = router;
