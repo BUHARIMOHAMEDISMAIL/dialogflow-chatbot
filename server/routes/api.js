@@ -36,29 +36,29 @@ router.post('/test', function (req, res) {
 
 router.post('/webhook', function (req, res) {
 //     req.result.contexts[7].parameters.any.original
-    let orderdata = {
-      assignment_name: req.body.result.contexts[7].parameters.any.original,
-      location: req.body.result.contexts[7].parameters.location.original,
+//     let orderdata = {
+//       assignment_name: req.body.result.contexts[7].parameters.any.original,
+//       location: req.body.result.contexts[7].parameters.location.original,
 //       role: req.body.result.contexts[7].parameters.assignment-role.original,
 //       role_count: req.body.result.contexts[7].parameters.number-integer.original,
-      date: req.body.result.contexts[7].parameters.date5.original,
-      start_time: req.body.result.contexts[7].parameters.time.original,
-      end_time: req.body.result.contexts[7].parameters.time1.original,
+//       date: req.body.result.contexts[7].parameters.date5.original,
+//       start_time: req.body.result.contexts[7].parameters.time.original,
+//       end_time: req.body.result.contexts[7].parameters.time1.original,
 //       experience_needed: req.body.result.contexts[7].parameters.candidate-experience.original,
 //       pay_rate: req.body.result.contexts[7].parameters.number-integer2.original,
-      language_needed: req.body.result.contexts[7].parameters.language.original
-    };
-    let result = JSON.stringify(orderdata);
-//     res.json(result);
-    res.status(200).json({
-      source: 'webhook',
-      speech: result,
-      displayText: result
-    })
-//      res.send(JSON.stringify({
-//         "speech" : "Error. Can you try it again ? ",
-//         "displayText" : "Error. Can you try it again ? "
-//      }));
+//       language_needed: req.body.result.contexts[7].parameters.language.original
+//     };
+//     let result = JSON.stringify(orderdata);
+  
+//     res.status(200).json({
+//       source: 'webhook',
+//       speech: req.body.lang,
+//       displayText: req.body.lang
+//     })
+     res.send(JSON.stringify({
+        "speech" : req.body.lang,
+        "displayText" : req.body.lang
+     }));
 });
 // router.post('/webhook', function (req, res) {
 //     let result = req;
