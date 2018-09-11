@@ -47,7 +47,12 @@ let orderdata = {
     };
 router.post('/webhook', function (req, res) {
     let result = orderdata;
-    res.json(result);
+//     res.json(result);
+    res.status(200).json({
+      source: 'webhook',
+      speech: result,
+      displayText: result
+    })
 });
 // router.post('/webhook', function (req, res) {
 //     let result = req;
