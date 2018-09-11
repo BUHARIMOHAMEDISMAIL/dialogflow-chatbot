@@ -50,15 +50,15 @@ router.post('/webhook', function (req, res) {
 //     };
 //     let result = JSON.stringify(orderdata);
   
-//     res.status(200).json({
-//       source: 'webhook',
-//       speech: req.body.lang,
-//       displayText: req.body.lang
-//     })
-     res.send(JSON.stringify({
-        "speech" : req.body.lang,
-        "displayText" : req.body.lang
-     }));
+    res.status(200).json({
+      source: 'webhook',
+      speech: req.body.lang,
+      displayText: req.body.lang
+    })
+//      res.send(JSON.stringify({
+//         "speech" : req.body.lang,
+//         "displayText" : req.body.lang
+//      }));
 });
 // router.post('/webhook', function (req, res) {
 //     let result = req;
