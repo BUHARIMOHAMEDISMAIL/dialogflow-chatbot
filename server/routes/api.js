@@ -48,12 +48,12 @@ router.post('/webhook', function (req, res) {
 //       pay_rate: req.body.result.contexts[7].parameters.number-integer2.original,
 //       language_needed: req.body.result.contexts[7].parameters.language.original
 //     };
-//     let result = JSON.stringify(orderdata);
+    let placeOrder = JSON.stringify(req.body.result);
   
     res.status(200).json({
       source: 'webhook',
-      speech: req.body.lang,
-      displayText: req.body.lang
+      speech: placeOrder,
+      displayText: placeOrder
     })
 //      res.send(JSON.stringify({
 //         "speech" : req.body.lang,
