@@ -33,19 +33,21 @@ router.post('/test', function (req, res) {
 
         request.end();
 });
-let orderdata = {
-    assignment_name: 'Testing',
-    location: 'Los vegas',
-    role: 'catering Staff',
-    role_count: 2,
-    date: '10-02-2018',
-    start_time: '04:00 am',
-    end_time: '09:00 pm',
-    experience_needed: 'Rookie',
-    pay_rate: 20,
-    language_needed: 'english'
-    };
+
 router.post('/webhook', function (req, res) {
+    req.result.contexts[7].parameters.any.original
+    let orderdata = {
+      assignment_name: req.result.contexts[7].parameters.any.original,
+      location: req.result.contexts[7].parameters.location.original,
+//       role: req.result.contexts[7].parameters.assignment-role.original,
+//       role_count: req.result.contexts[7].parameters.number-integer.original,
+      date: req.result.contexts[7].parameters.date5.original,
+      start_time: req.result.contexts[7].parameters.time.original,
+      end_time: req.result.contexts[7].parameters.time1.original,
+//       experience_needed: req.result.contexts[7].parameters.candidate-experience.original,
+//       pay_rate: req.result.contexts[7].parameters.number-integer2.original,
+      language_needed: req.result.contexts[7].parameters.language.original
+    };
     let result = JSON.stringify(orderdata);
 //     res.json(result);
     res.status(200).json({
