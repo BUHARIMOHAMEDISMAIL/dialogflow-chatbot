@@ -48,11 +48,15 @@ let orderdata = {
 router.post('/webhook', function (req, res) {
     let result = JSON.stringify(orderdata);
 //     res.json(result);
-    res.status(200).json({
-      source: 'webhook',
-      speech: result,
-      displayText: result
-    })
+//     res.status(200).json({
+//       source: 'webhook',
+//       speech: result,
+//       displayText: result
+//     })
+     res.send(JSON.stringify({
+        "speech" : "Error. Can you try it again ? ",
+        "displayText" : "Error. Can you try it again ? "
+     }));
 });
 // router.post('/webhook', function (req, res) {
 //     let result = req;
