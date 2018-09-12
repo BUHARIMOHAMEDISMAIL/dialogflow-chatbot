@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const apiai = require('apiai');
+const uuidv1 = require('uuid/v1');
+
 
 var app = apiai("747582eae2a04c5fbcf4f3f273ee6cf7");   
 
@@ -9,10 +11,18 @@ router.get('/', (req, res) => {
   res.send('api works');
 });
 
+let session = '';
+//session id creating
+router.get('/session', function (req, res) {
+    // uuidv1();
+    session = uuidv1();
+    res.json(session);
+})
+
 router.post('/test', function (req, res) {
     console.log('test is working');
     let message = req.body.message
-        var sessid = "875968459080";
+        var sessid = session;
         var postvalue = message;
         var request = app.textRequest(postvalue, {
             sessionId: sessid
